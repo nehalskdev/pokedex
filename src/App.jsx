@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { fetchAllPokemonDetails } from "./services/api";
-import PokemonCard from "./components/PokemonCard";
-import SearchBar from "./components/SearchBar";
-import TypeFilter from "./components/TypeFilter";
-import Loading from "./components/Loading";
+import PokemonCard from "./components/PokemonCard/PokemonCard";
+import SearchBar from "./components/SearchBar/SearchBar";
+import TypeFilter from "./components/TypeFilter/TypeFilter";
+import Loading from "./components/Loading/Loading";
 import "./App.css";
 
 function App() {

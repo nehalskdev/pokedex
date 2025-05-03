@@ -1,4 +1,3 @@
-/* Animated Gradient Background */
 body {
   background: linear-gradient(-45deg, #ff8b8f, #fad0c4, #fbc2eb, #a6c1ee);
   background-size: 400% 400%;
@@ -40,7 +39,6 @@ body {
   margin-bottom: 0.5rem;
 }
 
-/* Pokemon Container Grid */
 .pokemon-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
