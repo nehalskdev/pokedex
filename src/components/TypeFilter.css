@@ -1,0 +1,48 @@
+.type-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  margin: 1.5rem 0;
+}
+
+.type-filter button {
+  padding: 0.5rem 1.2rem;
+  border: none;
+  border-radius: 50px;
+  font-weight: 600;
+  text-transform: capitalize;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  color: rgb(19, 12, 2);
+  position: relative;
+  overflow: hidden;
+}
+
+.type-filter button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom right,
+    rgba(255, 255, 255, 0.2),
+    rgba(255, 255, 255, 0)
+  );
+}
+
+.type-filter button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.type-filter button.active {
+  transform: scale(1.05);
+  box-shadow: 0 0 0 2px white, 0 6px 12px rgba(0, 0, 0, 0.2);
+  color: rgb(221, 19, 19);
+}
+
+/* Type colors remain the same as before */

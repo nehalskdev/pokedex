@@ -1,0 +1,116 @@
+/* Base Search Bar Styles */
+.search-bar {
+  --pokemon-red: #ff5353;
+  --pokemon-blue: #3b4cca;
+  --transition-speed: 0.3s;
+
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  position: relative;
+  padding: 0.5rem; /* Added padding for mobile */
+}
+
+/* Input Field - Responsive by Default */
+.search-bar input {
+  width: 100%;
+  padding: 1rem 1.5rem 1rem 3rem; /* Adjusted for mobile */
+  font-size: clamp(0.9rem, 3vw, 1.1rem); /* Fluid typography */
+  font-family: "Poppins", sans-serif;
+  border: none;
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1),
+    inset 0 1px 3px rgba(255, 255, 255, 0.4);
+  color: #2d3748;
+  transition: all var(--transition-speed) ease;
+}
+
+/* Mobile-First Adjustments */
+@media (max-width: 480px) {
+  .search-bar input {
+    padding: 0.8rem 1.2rem 0.8rem 2.8rem; /* Tighter padding */
+  }
+}
+
+/* Pokéball Icon (Pure CSS) */
+.search-bar::before {
+  content: "";
+  position: absolute;
+  left: 1.2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: clamp(0.9rem, 3vw, 1.2rem); /* Responsive sizing */
+  height: clamp(0.9rem, 3vw, 1.2rem);
+  background: var(--pokemon-red);
+  border-radius: 50%;
+  border: 2px solid #2d3748;
+  z-index: 2;
+  transition: all var(--transition-speed) ease;
+}
+
+.search-bar::after {
+  content: "";
+  position: absolute;
+  left: 1.2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: clamp(0.9rem, 3vw, 1.2rem);
+  height: clamp(0.4rem, 1.5vw, 0.6rem);
+  background: white;
+  border-left: 2px solid #2d3748;
+  border-right: 2px solid #2d3748;
+  border-bottom: 2px solid #2d3748;
+  border-radius: 0 0 8px 8px;
+  z-index: 1;
+}
+
+/* Focus States */
+.search-bar input:focus {
+  outline: none;
+  box-shadow: 0 4px 20px rgba(59, 76, 202, 0.2),
+    inset 0 1px 3px rgba(255, 255, 255, 0.4);
+}
+
+.search-bar:focus-within::before,
+.search-bar:focus-within::after {
+  transform: translateY(-50%) scale(1.1);
+}
+
+/* Touch-Friendly Sizing for Mobile */
+@media (max-width: 375px) {
+  .search-bar input {
+    padding: 0.7rem 1rem 0.7rem 2.5rem;
+  }
+
+  .search-bar::before,
+  .search-bar::after {
+    left: 1rem;
+  }
+}
+
+/* Landscape Mobile Optimization */
+@media (max-height: 500px) and (orientation: landscape) {
+  .search-bar {
+    max-width: 400px;
+    margin-bottom: 1rem;
+  }
+}
+
+/* Smooth Transitions for All Interactive States */
+.search-bar input,
+.search-bar::before,
+.search-bar::after {
+  transition: transform var(--transition-speed) ease,
+    box-shadow var(--transition-speed) ease,
+    background var(--transition-speed) ease;
+}
+
+/* Disable heavy effects on devices that prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .search-bar input,
+  .search-bar::before,
+  .search-bar::after {
+    transition: none;
+  }
+}

@@ -1,0 +1,49 @@
+/* Animated Gradient Background */
+body {
+  background: linear-gradient(-45deg, #ff8b8f, #fad0c4, #fbc2eb, #a6c1ee);
+  background-size: 400% 400%;
+  animation: gradientBG 10s ease infinite;
+  min-height: 100vh;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.app {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.app-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.app-header h1 {
+  font-size: 3rem;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  margin-bottom: 0.5rem;
+}
+
+/* Pokemon Container Grid */
+.pokemon-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1.5rem;
+  padding: 1rem;
+}
